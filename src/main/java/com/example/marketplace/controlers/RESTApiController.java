@@ -22,21 +22,22 @@ public class RESTApiController {
     }
 
     @GetMapping("/{id}")
-    private Optional<Item> getById(@PathVariable("id") Long id) {
+    private Optional<Item> getById(@PathVariable("id") Integer id) {
         return itemService.getById(id);
     }
 
     @DeleteMapping("/remove/{id}")
-    private void delete(@PathVariable("id") Long id) {
+    private void delete(@PathVariable("id") Integer id) {
         itemService.remove(id);
     }
 
     @PatchMapping("/update/{id}")
-    private void update(@PathVariable("id") Long id) {
+    private void update(@PathVariable("id") Integer id) {
         itemService.getById(id).ifPresent(item -> {
             item.setSale(!item.getSale());
             itemService.save(item);
         });
+
     }
     @PostMapping("/add")
     private Item addProduct(@RequestBody ItemResponse response) {

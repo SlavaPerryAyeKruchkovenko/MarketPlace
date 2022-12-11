@@ -2,33 +2,28 @@ package com.example.marketplace.models;
 
 import jakarta.persistence.*;
 
-import java.io.Serializable;
-
 @Entity
-public class Item implements Serializable {
-    public Item(Long id, String name, Boolean isSale){
-        this.id = id;
-        this.name = name;
-        this.isSale = isSale;
-    }
+@Table(name = "items")
+public class Item{
     public Item(){
 
     }
+
     public Item(String name){
         this.name = name;
     }
-    private Long id;
+    private Integer itemId;
     private String name;
     private Boolean isSale = false;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getId() {
-        return id;
+    @GeneratedValue
+    public Integer getItemId() {
+        return itemId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setItemId(Integer id) {
+        this.itemId = id;
     }
 
     public String getName() {

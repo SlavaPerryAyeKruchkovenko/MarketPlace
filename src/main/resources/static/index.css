@@ -64,6 +64,9 @@ form{
     top: 0;
     color:blue;
 }
+body{
+    margin: 0;
+}
 input[type='checkbox']{
     width: 30px;
     height: 30px;

@@ -11,9 +11,10 @@ $(document).ready(async ()=> {
         item.append(deleteBtn)
 
         deleteBtn.click(()=>{
+            console.log(json)
             $.ajax({
                 method: "DELETE",
-                url: `/api/remove/${json.id}`,
+                url: `/api/remove/${json.itemId}`,
                 contentType:"application/json",
                 dataType:"json",
                 cache: false,
@@ -24,9 +25,10 @@ $(document).ready(async ()=> {
             })
         })
         saleCheck.click(()=>{
+            console.log(json)
             $.ajax({
                 method: "PATCH",
-                url: `/api/update/${json.id}`,
+                url: `/api/update/${json.itemId}`,
                 contentType:"application/json",
                 dataType:"json",
                 cache: false,
