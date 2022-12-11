@@ -62,6 +62,7 @@ form{
     position: absolute;
     left: 0;
     top: 0;
+    color:blue;
 }
 input[type='checkbox']{
     width: 30px;
