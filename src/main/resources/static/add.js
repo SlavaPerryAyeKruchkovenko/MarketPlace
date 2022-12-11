@@ -3,7 +3,6 @@ $(document).ready(()=>{
     feather.replace()
     const addBtn = $('#add');
     addBtn.click(e=>{
-        console.log($('#name').val())
         $.ajax({
             method: "POST",
             url: `/api/add`,
@@ -14,7 +13,6 @@ $(document).ready(()=>{
             }),
             cache: false,
         }).done(()=>{
-            console.log('done')
             $('#name').val(' ')
         })
     })

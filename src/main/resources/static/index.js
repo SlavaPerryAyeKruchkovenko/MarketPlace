@@ -17,7 +17,9 @@ $(document).ready(async ()=> {
                 contentType:"application/json",
                 dataType:"json",
                 cache: false,
-            }).done(value=>{
+            }).done(()=>{
+                item.remove()
+            }).fail(()=>{
                 item.remove()
             })
         })
@@ -30,6 +32,7 @@ $(document).ready(async ()=> {
                 cache: false,
             }).done(value=>{
                 console.log(value)
+            }).fail(()=>{
             })
         })
         return item;
