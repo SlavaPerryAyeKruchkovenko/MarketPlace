@@ -16,22 +16,22 @@ public class RESTApiController {
         this.itemService = itemService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/item")
     private Iterable<Item> list() {
         return itemService.getAllItems();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/item/{id}")
     private Optional<Item> getById(@PathVariable("id") Integer id) {
         return itemService.getById(id);
     }
 
-    @DeleteMapping("/remove/{id}")
+    @DeleteMapping("/item/{id}")
     private void delete(@PathVariable("id") Integer id) {
         itemService.remove(id);
     }
 
-    @PatchMapping("/update/{id}")
+    @PatchMapping("/item/{id}")
     private void update(@PathVariable("id") Integer id) {
         itemService.getById(id).ifPresent(item -> {
             item.setSale(!item.getSale());
@@ -39,7 +39,7 @@ public class RESTApiController {
         });
 
     }
-    @PostMapping("/add")
+    @PostMapping("/item")
     private Item addProduct(@RequestBody ItemResponse response) {
         return itemService.add(response);
     }

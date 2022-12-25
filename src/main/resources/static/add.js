@@ -5,14 +5,14 @@ $(document).ready(()=>{
     addBtn.click(e=>{
         $.ajax({
             method: "POST",
-            url: `/api/add`,
+            url: `/api/item`,
             contentType:"application/json",
             dataType:"json",
             data: JSON.stringify({
                 "name": $('#name').val()
             }),
             cache: false,
-        }).done(()=>{
+        }).done(value=>{
             $('#name').val(' ')
         })
     })

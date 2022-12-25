@@ -14,7 +14,7 @@ $(document).ready(async ()=> {
             console.log(json)
             $.ajax({
                 method: "DELETE",
-                url: `/api/remove/${json.itemId}`,
+                url: `/api/item/${json.itemId}`,
                 contentType:"application/json",
                 dataType:"json",
                 cache: false,
@@ -28,7 +28,7 @@ $(document).ready(async ()=> {
             console.log(json)
             $.ajax({
                 method: "PATCH",
-                url: `/api/update/${json.itemId}`,
+                url: `/api/item/${json.itemId}`,
                 contentType:"application/json",
                 dataType:"json",
                 cache: false,
@@ -41,7 +41,7 @@ $(document).ready(async ()=> {
     }
     $.ajax({
         method: "GET",
-        url: "/api/",
+        url: "/api/item",
         contentType:"application/json",
         dataType:"json",
         cache: false,

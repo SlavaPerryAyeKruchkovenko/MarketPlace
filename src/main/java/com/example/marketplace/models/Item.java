@@ -12,12 +12,12 @@ public class Item{
     public Item(String name){
         this.name = name;
     }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer itemId;
     private String name;
     private Boolean isSale = false;
 
-    @Id
-    @GeneratedValue
     public Integer getItemId() {
         return itemId;
     }
